@@ -11,9 +11,14 @@ RSpec.describe 'Check for leap year' do
     expect(leap_year(1994)).to eq(false) # it's my birth year so mandatory to check
   end
 
-  it 'checks for leap year with divisible by 100' do
+  it 'checks for leap year with divisible by 100 but not by 400' do
     expect(leap_year(1800)).to eq(false)
     expect(leap_year(1400)).to eq(false)
+  end
+
+  it 'checks for leap year with divisible by 400' do
+    expect(leap_year(2000)).to eq(true)
+    expect(leap_year(1600)).to eq(true)
   end
 
 
